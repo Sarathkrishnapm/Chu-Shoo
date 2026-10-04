@@ -1,0 +1,493 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>For My Shuttukudaappiii ❤️</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Segoe UI", sans-serif;
+            background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+            color: #5a2430;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Floating hearts */
+        .heart {
+            position: fixed;
+            bottom: -50px;
+            font-size: 25px;
+            animation: floatUp linear forwards;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-110vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Main */
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: auto;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .small-heart {
+            font-size: 60px;
+            animation: heartbeat 1.2s infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.2);
+            }
+        }
+
+        h1 {
+            font-size: clamp(40px, 8vw, 75px);
+            margin: 20px 0;
+            color: #8b2635;
+        }
+
+        .subtitle {
+            font-size: 22px;
+            max-width: 700px;
+            line-height: 1.7;
+        }
+
+        /* Bouquet */
+        .bouquet-section {
+            margin: 50px 0;
+        }
+
+        .bouquet {
+            font-size: 80px;
+            margin: 30px;
+            animation: sway 3s ease-in-out infinite;
+        }
+
+        @keyframes sway {
+            0%, 100% {
+                transform: rotate(-4deg);
+            }
+
+            50% {
+                transform: rotate(4deg);
+            }
+        }
+
+        .flowers {
+            font-size: 55px;
+            letter-spacing: 8px;
+        }
+
+        /* Message */
+        .letter {
+            background: rgba(255,255,255,0.8);
+            border-radius: 25px;
+            padding: 40px;
+            margin: 60px auto;
+            max-width: 750px;
+            box-shadow: 0 15px 40px rgba(100, 30, 50, 0.15);
+            line-height: 1.9;
+            font-size: 19px;
+        }
+
+        .letter h2 {
+            color: #a52a3a;
+            margin-bottom: 20px;
+            font-size: 32px;
+        }
+
+        /* Photos */
+        .photos {
+            margin-top: 70px;
+        }
+
+        .photos h2 {
+            font-size: 40px;
+            margin-bottom: 30px;
+        }
+
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .photo-card {
+            background: white;
+            padding: 12px 12px 25px;
+            border-radius: 15px;
+            box-shadow: 0 12px 30px rgba(80, 20, 30, 0.18);
+            transform: rotate(-2deg);
+            transition: 0.4s;
+        }
+
+        .photo-card:nth-child(even) {
+            transform: rotate(2deg);
+        }
+
+        .photo-card:hover {
+            transform: rotate(0deg) scale(1.04);
+        }
+
+        .photo-card img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .photo-card p {
+            margin-top: 15px;
+            font-size: 17px;
+        }
+
+        /* Button */
+        .button-area {
+            margin: 70px 0;
+        }
+
+        button {
+            border: none;
+            background: #b82e46;
+            color: white;
+            padding: 18px 35px;
+            border-radius: 50px;
+            font-size: 20px;
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(120, 20, 40, 0.25);
+            transition: 0.3s;
+        }
+
+        button:hover {
+            transform: scale(1.08);
+            background: #8f2035;
+        }
+
+        /* Hidden message */
+        #secret {
+            display: none;
+            margin: 30px auto;
+            max-width: 650px;
+            background: rgba(255,255,255,0.9);
+            padding: 30px;
+            border-radius: 20px;
+            font-size: 24px;
+            line-height: 1.7;
+            animation: appear 1s ease;
+        }
+
+        @keyframes appear {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        footer {
+            padding: 40px;
+            font-size: 17px;
+        }
+
+        /* Mobile */
+        @media (max-width: 600px) {
+
+            .letter {
+                padding: 25px;
+            }
+
+            .flowers {
+                font-size: 40px;
+            }
+
+            .photo-card img {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Floating hearts -->
+    <div id="hearts"></div>
+
+    <main class="container">
+
+        <!-- HERO -->
+        <section class="hero">
+
+            <div class="small-heart">❤️</div>
+
+            <h1>I'm Sorry, My Shuttukudaaapppiii</h1>
+
+            <p class="subtitle">
+                I know things aren't perfect right now...
+                but there's something I really want you to know.
+                <br><br>
+                <strong>You are my comfortplace ❤️</strong>
+            </p>
+
+        </section>
+
+
+        <!-- BOUQUET -->
+        <section class="bouquet-section">
+
+            <h2>A Little Bouquet For ChuChu 💐</h2>
+
+            <div class="bouquet">
+                💐
+            </div>
+
+            <div class="flowers">
+                🌹 🌷 🌸 🌹 🌷
+            </div>
+
+            <p style="margin-top:25px; font-size:20px;">
+                I wish I could give you these flowers in person.
+                Until then, here's a little virtual bouquet from me to you. ❤️
+            </p>
+
+        </section>
+
+
+        <!-- LETTER -->
+        <section class="letter">
+
+            <h2>My Letter To You 💌</h2>
+
+            <p>
+                My Sugar level doctor,
+                <br><br>
+
+                I know we're fighting right now, and honestly,
+                I don't like this distance between us.
+
+                <br><br>
+
+                If I said something that hurt you,
+                I'm truly sorry. I never wanted to make you feel
+                unwanted, unimportant, or unloved.
+
+                <br><br>
+
+                Sometimes I make mistakes.
+                Sometimes I don't say things the right way.
+                But one thing I never want you to doubt is
+                how much you mean to me.
+
+                <br><br>
+
+                I don't want one argument to become bigger
+                than all the beautiful memories we've created together.
+
+                <br><br>
+
+                I miss your smile.
+                I miss talking to you.
+                I miss being able to tell you everything.
+
+                <br><br>
+
+                So here's my little way of saying...
+
+                <br><br>
+
+                <strong>
+                    I'm sorry. ❤️
+                    <br>
+                    I love you.
+                    <br>
+                    And I want us to be okay again.
+                </strong>
+
+            </p>
+
+        </section>
+
+
+        <!-- PHOTOS -->
+        <section class="photos">
+
+            <h2>Our Little Memories 📸❤️</h2>
+
+            <div class="photo-grid">
+
+                <div class="photo-card">
+                    <img src="happy us.jpeg" alt="Our memory">
+                    <p>Look How happy we are togather ❤️</p>
+                </div>
+
+                <div class="photo-card">
+                    <img src="our teenage.jpeg" alt="Our memory">
+                    <p>Look at us... 🥹❤️</p>
+                </div>
+
+                <div class="photo-card">
+                    <img src="shooppi and chuchu.jpeg" alt="Our memory">
+                    <p>More memories I never want to forget 💕</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FINAL MESSAGE -->
+        <section class="button-area">
+
+            <button onclick="showMessage()">
+                💗 One More Thing...
+            </button>
+
+            <div id="secret">
+
+                <p>
+                    If I could go back and change the moment
+                    that caused our fight, I would.
+
+                    <br><br>
+
+                    But I can't change the past.
+
+                    <br><br>
+
+                    What I can do is choose you again.
+
+                    <br><br>
+
+                    So...
+
+                    <br><br>
+
+                    <strong>
+                        Can we forget the fight,
+                        hug each other,
+                        and start again? 🥺❤️
+                    </strong>
+
+                    <br><br>
+
+                    I love you. ❤️
+
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <footer>
+            Made with ❤️ just for you
+        </footer>
+
+    </main>
+
+
+    <!-- Optional music -->
+    <audio id="music" loop>
+        <source src="music.mp3" type="audio/mpeg">
+    </audio>
+
+
+    <script>
+
+        /* Floating hearts */
+
+        function createHeart() {
+
+            const heart = document.createElement("div");
+
+            heart.className = "heart";
+
+            const hearts = ["❤️", "💗", "💕", "💖", "💘"];
+
+            heart.innerHTML =
+                hearts[Math.floor(Math.random() * hearts.length)];
+
+            heart.style.left =
+                Math.random() * 100 + "vw";
+
+            heart.style.animationDuration =
+                (4 + Math.random() * 5) + "s";
+
+            heart.style.fontSize =
+                (15 + Math.random() * 25) + "px";
+
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 9000);
+        }
+
+        setInterval(createHeart, 500);
+
+
+        /* Secret message */
+
+        function showMessage() {
+
+            const secret = document.getElementById("secret");
+
+            secret.style.display = "block";
+
+            // Try playing music after user interaction
+            const music = document.getElementById("music");
+
+            music.play().catch(() => {
+                console.log("Music could not autoplay.");
+            });
+
+            // Extra hearts ❤️
+            for (let i = 0; i < 20; i++) {
+                setTimeout(createHeart, i * 100);
+            }
+        }
+
+    </script>
+
+</body>
+</html>
+```
